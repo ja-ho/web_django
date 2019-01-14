@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
+
+from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+	url(r'^admin/', include(admin.site.urls)),
+	#path('admin/', admin.site.urls),
+	
+	#Class-based views for Bookmark app
+	url(r'^bookmark/$', BookmarkLV.as_view(), name='index'),
+	url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
 ]

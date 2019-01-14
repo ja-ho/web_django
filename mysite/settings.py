@@ -25,7 +25,7 @@ SECRET_KEY = '32kqguhu&li#di60@ksi1s4aj136m75g)^r6l**)fxnr%3#w$8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.122.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'bookmark.apps.BookmarkConfig',
 ]
 
 MIDDLEWARE = [
@@ -107,8 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-#LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'ko-kr'
 #TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Seoul'
 
