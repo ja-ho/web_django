@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 
+from mysite.views import HomeView
 #from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
 	#url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', HomeView.as_view(), name='home'),
+
 	url(r'^admin/', admin.site.urls),
     #path('admin/', admin.site.urls),
 	url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
