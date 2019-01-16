@@ -2,7 +2,7 @@
 <html lang="ko">
 
 	<head>
-		<title>{% block title %}simple blog{% end block %}</title>
+		<title>{% block title %}simple blog{% endblock %}</title>
 		
 		{% load staticfiles %}
 		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
@@ -28,23 +28,23 @@
 			
 			<li><a href="#">Add&bigtriangledown;</a>
 				<ul>
-					<li><a href="#">Bookmark</a><li>
-					<li><a href="#">Blog</a><li>
-					<li><a href="#">Photo</a><li>
+					<li><a href="#">Bookmark</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Photo</a></li>
 				</ul>
 			</li>
 			<li><a href="#">Change&bigtriangledown;</a>
 				<ul>
-					<li><a href="#">Bookmark</a><li>
-					<li><a href="#">Blog</a><li>
-					<li><a href="#">Photo</a><li>
+					<li><a href="#">Bookmark</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Photo</a></li>
 				</ul>
 			</li>
 
 			
-			<li><a href="#">Archive</a><li>
-			<li><a href="#">Search</a><li>
-			<li><a href="#">Admin</a><li>
+			<li><a href="#">Archive</a></li>
+			<li><a href="#">Search</a></li>
+			<li><a href="#">Admin</a></li>
 		</div>
 		
 		{% block content %}{% endblock %}
