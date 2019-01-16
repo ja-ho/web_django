@@ -32,6 +32,6 @@ class Post(models.Model):
     def get_previous_post(self):
         return self.get_previous_by_modify_date()
 
-    def get_next_pot(self):
+    def get_next_post(self):
         return self.get_next_by_modify_date()
 
