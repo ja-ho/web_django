@@ -2,7 +2,7 @@ from django.conf.urls import url
 from blog.views import *
 
 app_name = 'blog'
-url_patterns = [
+urlpatterns = [
     #Example: /
     url(r'^$', PostLV.as_view(), name='index'),
 
