@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Tag-Cloud{% endblock%}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "tagging/tag.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="content">
+	<h1>Blog Tag Cloud</h1>
+
+	<div class="tag-cloud">
+		{% load taggit-extras %}
+		{% get_tagcluoud as tags %}
+	</div>
+</div>
+{% endblock %}

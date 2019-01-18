@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Tagging-Post-List{% endblock%}
+
+{% block content %}
+
+<div id="content">
+	<h1>Posts for tag - {{ objects.tags.name }}</h1>
+	
+	{% for post in objects %}
+	<h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+	{{ post.modify_date|date:"N d, Y" }}
+	<p>{{ post.description }}</p>
+	{% endfor %}
+</div>
+{% endblock %}
