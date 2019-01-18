@@ -11,7 +11,7 @@ div#header {
 	height: 30px;
 	width: 100%;
 	display: table;
-	background: orange;
+	background: #2E2E2E;
 }
 
 div#menu {
@@ -35,7 +35,7 @@ div#content {
 }
 
 div#footer {
-	position:absolute;
+	position: relative;
 	bottom: 20px;
 	left: 50px;
 	right: 50px;
