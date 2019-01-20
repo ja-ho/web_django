@@ -41,6 +41,7 @@ class PostTOL(TagMixin, ListView):
 class PostDV(DetailView):
     model = Post
 
+
 #--- Archive View
 class PostAV(ArchiveIndexView):
     model = Post

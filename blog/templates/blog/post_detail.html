@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Blog Post_detail{% endblock %}
+{% block title %}Blog post_detail{% endblock %}
 
 {% block content %}
 
@@ -28,12 +28,10 @@
 	<div>
 		<b>TAGS: </b>
 		<ul>
-			{% load taggit_extras %}
-			{% get_taglist as tags %}
-			{% for tag in tags %}
-			<li><a href="{% url 'blog:tagged_object_list' tag.name %}">{{ tag.name }}</a></li>
-			{% empty %}
-			<li>No Tags</li>
+			{% for tag in object.tags.all %}
+				<li><a href="{% url 'blog:tagged_object_list' tag %}">{{ tag }}</a></li>
+				{% empty %}
+				<li>No Tags</li>
 			{% endfor %}
 		</ul>
 		<a href="{% url 'blog:tag_cloud' %}"><i>[ TagCloud ]</i></a>
