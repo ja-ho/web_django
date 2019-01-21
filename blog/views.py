@@ -6,7 +6,7 @@ from django.views.generic.dates import DayArchiveView, TodayArchiveView
 from blog.models import Post
 
 from tagging.models import Tag, TaggedItem
-from tagging.view import TaggedObjectList
+from tagging.views import TaggedObjectList
 
 # Create your views here.
 
