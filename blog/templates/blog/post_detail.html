@@ -27,13 +27,11 @@
 
 	<div>
 		<b>TAGS: </b>
-		<ul>
-			{% for tag in object.tags.all %}
-				<li><a href="{% url 'blog:tagged_object_list' tag %}">{{ tag }}</a></li>
-				{% empty %}
-				<li>No Tags</li>
-			{% endfor %}
-		</ul>
+		{% load tagging_tags %}
+		{% tags_for_object object as tags %}
+		{% for tag in tags %}
+			<a href="{% url 'blog:tagged_object_list' tag.name %}">{{ tag.name }}</a>
+		{% endfor %}
 		<a href="{% url 'blog:tag_cloud' %}"><i>[ TagCloud ]</i></a>
 	</div>
 

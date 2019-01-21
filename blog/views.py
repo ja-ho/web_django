@@ -5,19 +5,14 @@ from django.views.generic.dates import DayArchiveView, TodayArchiveView
 
 from blog.models import Post
 
-from taggit.models import Tag
+from tagging.models import Tag, TaggedItem
+from tagging.view import TaggedObjectList
 
 # Create your views here.
 
-class TagMixin(object):
-    def get_context_data(self, kwargs):
-        context = super(TagMixin, self).get_context_data(kwargs)
-        context['tags'] = Tag.objects.all()
-        return context
-
 #--- TemplateView
-class TagTV(TagMixin, TemplateView):
-    template_name = 'tagging/taggit_cloud.html'
+class TagTV(TemplateView):
+    template_name = 'tagging/tagging_cloud.html'
 
 #--- ListView
 class PostLV(ListView):
@@ -27,15 +22,9 @@ class PostLV(ListView):
     paginate_by = 2
 
 ## post tagging object list
-class PostTOL(TagMixin, ListView):
+class PostTOL(ListView):
     model = Post
     template_name = 'tagging/tagging_post_list.html'
-    paginate_by = '3'
-    #context_object_name = 'objects'
-
-    def get_queryset(self):
-        return Post.objects.filter(tags__slug=self.kwargs.get('slug'))
-
 
 #--- DetailView
 class PostDV(DetailView):

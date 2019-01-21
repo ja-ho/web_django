@@ -5,9 +5,9 @@
 {% block content %}
 
 <div id="content">
-	<h1>Posts for tag - {{ objects.tags.name }}</h1>
-	
-	{% for post in objects %}
+	<h1>Posts for tag - {{ tag.name }}</h1>
+		
+	{% for post in object_list %}
 	<h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
 	{{ post.modify_date|date:"N d, Y" }}
 	<p>{{ post.description }}</p>

@@ -33,5 +33,5 @@ urlpatterns = [
     url(r'^tag/$', TagTV.as_view(), name='tag_cloud'),
 
     #Example: /tag/tagname/
-    url(r'^tag/(?P<slug>[-\w]+)/$', PostTOL.as_view(), name="tagged_object_list"),
+    url(r'^tag/(?P<slug>[-\w]+(?u))/$', PostTOL.as_view(), name="tagged_object_list"),
 ]
