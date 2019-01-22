@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
     'tagging',
+    'disqus',
+    'django.contrib.sites',
 ]
+
+DISQUS_WEBSITE_SHORTNAME = 'jaho'
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

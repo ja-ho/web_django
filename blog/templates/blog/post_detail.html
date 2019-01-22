@@ -36,6 +36,10 @@
 	</div>
 
 	<br/>
+	<div>
+		{% load disqus_tags %}
+		{% disqus_show_comments %}
+	</div>
 	<p><a href="{% url 'blog:post_list' %}">get back to list</a></p>
 </div>
 {% endblock %}
