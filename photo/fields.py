@@ -21,7 +21,6 @@ class ThumbnailImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         super(ThumbnailImageFieldFile, self).save(name, content, save)
         img = Image.open(self.path)
-
         size = (128, 128)
 
         img.thumbnail(size, Image.ANTIALIAS)
