@@ -19,11 +19,17 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from mysite.views import HomeView
+from mysite.views import UserCreateView, UserCreateDoneTV
 #from bookmark.views import BookmarkLV, BookmarkDV
 
 urlpatterns = [
 	#url(r'^admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view(), name='home'),
+
+    # auth url
+    url(r'^accounts/$', include('django.contrib.auth.url')),
+    url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
+    url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
 
 	url(r'^admin/', admin.site.urls),
     #path('admin/', admin.site.urls),
