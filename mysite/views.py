@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 
 from django.views.generic.edit import CreateView
-from django.contirb.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 
 # Create your views here.
