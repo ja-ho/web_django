@@ -6,6 +6,8 @@ from django.urls import reverse
 
 from tagging.fields import TagField
 
+from django.contrib.auth.models import User
+from django.utils.text import slugify
 # Create your models here.
 
 @python_2_unicode_compatible
@@ -19,6 +21,8 @@ class Post(models.Model):
     create_date = models.DateTimeField('Create Date', auto_now_add=True)
     modify_date = models.DateTimeField('Modify Date', auto_now=True)
     tags = TagField()
+
+    owner = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'post'
@@ -37,4 +41,9 @@ class Post(models.Model):
 
     def get_next_post(self):
         return self.get_next_by_modify_date()
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            slug = slugify(self.title, allow_unicode=True)
+        super(Post, self).save(self, *args, **kwargs)
 
