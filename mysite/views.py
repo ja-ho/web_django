@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 #--- TemplateView
@@ -18,3 +19,10 @@ class UserCreateView(CreateView):
 
 class UserCreateDoneTV(TemplateView):
     template_name = 'registration/register_done.html'
+
+class LoginRequiredMixin:
+    @class_method
+    def as_view(cls, **initkwargs):
+        view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+        return login_required(view)
+
