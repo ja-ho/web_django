@@ -88,7 +88,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     #fields = ['title', 'description', 'content', 'tag']
     success_url = reverse_lazy('blog:index')
 
-    def form_vaild(self):
+    def form_valid(self, form):
         form.instance.owner = self.request.user
         return super(PostCreateView, self).form_valid(form)
 

@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from bookmark.views import BookmarkLV, BookmarkDV
+from bookmark.views import *
 
 app_name = 'bookmark'
 urlpatterns = [
